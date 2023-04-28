@@ -2,8 +2,8 @@
 /**
  * isupper -uppercase letters
  * @c: char to check
- * checking for uppercase letters 
- * Return: 0 or 1
+ * checking for uppercase letters
+ * Return: 1 if uppercase 0 otherwise
  */
 int _isupper(int c)
 {
