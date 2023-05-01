@@ -8,14 +8,14 @@
 int main(void)
 
 {
-	_putchar('p');
-	_putchar('_');
-	_putchar('u');
-	_putchar('h');
-	_putchar('t');
-	_putchar('c');
-	_putchar('r');
-	_putchar('a');
-	_putchar('\n');
+	putchar('_');
+	putchar('p');
+	putchar('u');
+	putchar('h');
+	putchar('t');
+	putchar('c');
+	putchar('r');
+	putchar('a');
+	putchar('\n');
 	return (0);
 }
