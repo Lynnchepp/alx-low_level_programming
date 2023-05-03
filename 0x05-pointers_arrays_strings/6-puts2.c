@@ -3,15 +3,15 @@
  * puts2 - function should print only one character out of the two
  * starting with the firdt one
  * @str: input
- * Return; print
+ * Return: no return
  */
 void puts2(char *str)
 {
 	int longi = 0;
 	int t = 0;
 	char *y = str;
-
-	int = 0;
+	int i = 0;
+	int o;
 
 	while (*y != '\0')
 	{
