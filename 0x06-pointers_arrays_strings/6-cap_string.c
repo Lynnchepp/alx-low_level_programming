@@ -15,7 +15,7 @@ char *cap_string(char *str)
 		if (str[index - 1] == ' ' ||
 				str[index - 1] == 't' ||
 				str[index - 1] == '\n' ||
-				srt[index - 1] == ',' ||
+				str[index - 1] == ',' ||
 				str[index - 1] == '.' ||
 				str[index - 1] == ';' ||
 				str[index - 1] == '(' ||
@@ -24,8 +24,8 @@ char *cap_string(char *str)
 				str[index - 1] == '}' ||
 				str[index - 1] == '!' ||
 				str[index - 1] == '?' ||
-				srt[index - 1] == '"' ||
-				index == o)
+				str[index - 1] == '"' ||
+				index == 0)
 			str[index] -= 32;
 		index++;
 	}
