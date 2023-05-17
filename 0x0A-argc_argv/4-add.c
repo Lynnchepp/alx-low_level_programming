@@ -1,44 +1,58 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "main.h"
-
+#include <string.h>
+#include <ctype.h>
 /**
- * is_digit - checks if a character is a digit
- * @c: the character to check
- * Return: 1 if c is a digit, 0 otherwise
+ * check_num - checks for digits in a string
+ * @str: array
+ * Return: 0 (success)
  */
-int is_digit(char c)
+int check_num(char *str)
 {
-	return (c >= '0' && c <= '9');
-}
+	/*declaring variables*/
+	unsigned int count;
 
+	count = 0;
+	while (count < strlen(str)) /*count string*/
+	{
+		if (!isdigit(str[count])) /*check if str there are digit*/
+		{
+			return (0);
+		}
+		count++;
+	}
+	return (1);
+}
 /**
- * main - adds positive numbers
- * @argc: the number of command-line arguments
- * @argv: the array containing the command-line arguments
- * Return: 0 if successful, 1 otherwise
+ * main - prints program name
+ * @argc: arguments counts
+ * @argv: arguments
+ * Return: 0 (success)
  */
 int main(int argc, char *argv[])
 {
+	/*declaring variables*/
+	int count;
+	int str_to_int;
 	int sum = 0;
-	int i, j;
 
-	if (argc == 1)
+	count = 1;
+	while (count < argc) /*goes through the whole array*/
 	{
-		printf("0\n");
-		return (0);
-	}
-	for (i = 1; i < argc; i++)
-	{
-		for (j = 0; argv[i][j] != '\0'; j++)
+		if (check_num(argv[count]))
 		{
-			if (!is_digit(argv[i][j]))
-			{
-				printf("Error\n");
-				return (1);
-			}
+			str_to_int = atoi(argv[count]); /*ATOI --> convert str to int*/
+			sum += str_to_int;
 		}
-		sum += atoi(argv[i]);
+		/*condition if one of the numbers contains symbols that are not digits*/
+		else
+		{
+			printf("Error\n");
+			return (1);
+		}
+		count++;
 	}
-	printf("%d\n", sum);
+	printf("%d\n", sum); /*print sum*/
 	return (0);
 }
