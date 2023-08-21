@@ -1,6 +1,9 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
+
+char *create_buffer(char *file);
+void close_file(int fd);
 /**
  * create_buffer - copies the content of a file to another file.
  * @file: file buffer to store char for
@@ -22,7 +25,7 @@ char *create_buffer(char *file)
 }
 
 /**
- * close_file - closes file descriptor
+ * close_file - closes file descriptors.
  * @fd: file descriptor to close
  */
 void close_file(int fd)
@@ -54,7 +57,7 @@ void close_file(int fd)
 int main(int argc, char *argv[])
 {
 	int from, to, r, w;
-		char *buffer;
+	char *buffer;
 
 	if (argc != 3)
 	{
@@ -85,6 +88,7 @@ int main(int argc, char *argv[])
 		r = read(from, buffer, 1024);
 		to = open(argv[2], O_WRONLY | O_APPEND);
 	} while (r > 0);
+
 	free(buffer);
 	close_file(from);
 	close_file(to);
