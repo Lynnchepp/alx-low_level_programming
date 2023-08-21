@@ -42,8 +42,11 @@ void close_file(int fd)
  * main - copies file contents to another file
  * @argc: number of arguments in the program
  * @argv: array to argument pointer
+ *
  * Return: 0 on success
- * if the number of argument is not the correct one, exit with code 97
+ *
+ * Description: if the number of argument is not the correct one,
+ * exit with code 97
  * if file_from does not exist, or if you can not read it, exit with code 98
  * if you can not create or if write to file_to fails, exit with code 99
  * if you can not close a file descriptor , exit with code 100
