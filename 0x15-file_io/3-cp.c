@@ -48,10 +48,9 @@ void close_file(int fd)
  *
  * Return: 0 on success
  *
- * Description: if the number of argument is not the correct one,
- * exit with code 97
- * if file_from does not exist, or if you can not read it, exit with code 98
- * if you can not create or if write to file_to fails, exit with code 99
+ * Description: if the number of argument is not correct, exit with code 97
+ * if file_from does not exist, or can't be read, exit with code 98
+ * if you can't create or write to file_to, exit with code 99
  * if you can not close a file descriptor , exit with code 100
  */
 int main(int argc, char *argv[])
